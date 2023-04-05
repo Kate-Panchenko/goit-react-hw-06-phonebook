@@ -33,7 +33,7 @@ const schema = Yup.object().shape({
 
 function ContactForm() {
   const contacts = useSelector(getContacts);
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
     if (contacts.find(contact => contact.name === values.name)) {

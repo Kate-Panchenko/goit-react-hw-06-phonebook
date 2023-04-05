@@ -4,7 +4,7 @@ import { getFilter, changeFilter } from 'redux/contactsSlice';
 
 function Filter() {
   const filter = useSelector(getFilter);
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   const handleInputChange = e => {
     dispatch(changeFilter(e.target.value));
