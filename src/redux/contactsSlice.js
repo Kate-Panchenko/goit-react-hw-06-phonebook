@@ -15,7 +15,7 @@ const contactSlice = createSlice({
   reducers: {
     addContact: {
       reducer(state, { payload }) {
-        return [...state, payload];
+        state.contacts.push(payload);
       },
       prepare(values) {
         return {
@@ -39,6 +39,7 @@ const contactSlice = createSlice({
 const persistConfig = {
   key: 'contacts',
   storage,
+  blacklist: ['filter'],
 };
 
 export const contactsReducer = contactSlice.reducer;
